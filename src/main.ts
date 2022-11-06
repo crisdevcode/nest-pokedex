@@ -14,8 +14,13 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
-      })
-    );
+      // Transform DTOs for "pagination query"
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      }
+    })
+  );
 
   // Server
   await app.listen(3000);
