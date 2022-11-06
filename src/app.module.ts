@@ -24,7 +24,7 @@ import { JoiValidationSchema } from './config/joi.validation';
     }),
 
     // Database connection
-    MongooseModule.forRoot('mongodb://localhost:27017/nest-pokemon'),
+    MongooseModule.forRoot(process.env.MONGODB),
 
     // Modules
     PokemonModule,
